@@ -1,0 +1,143 @@
+html, body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+#root {
+    flex-grow: 1;
+    display: flex;
+}
+
+input.has-error,
+textarea.has-error {
+    border: 1.5px solid var(--bs-danger) !important;
+    color: var(--bs-danger) !important;
+}
+
+input.has-error::placeholder,
+textarea.has-error::placeholder {
+    color: var(--bs-danger);
+}
+
+input.has-error:focus,
+input.has-error:hover,
+textarea.has-error:focus,
+textarea.has-error:hover {
+    box-shadow: 0 0 0 .2rem rgba(220, 53, 69, .5) !important;
+}
+
+label.has-error {
+    color: var(--bs-danger) !important;
+}
+
+.alert {
+    margin-top: 12px;
+    width: fit-content;
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+}
+
+.slide-in {
+    animation: .5s ease-in-out slideIn;
+}
+
+.slide-out {
+    animation: .5s ease-in-out slideOut;
+}
+
+.checked {
+    text-decoration: line-through
+}
+
+.form-custom-control {
+    width: fit-content;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        bottom: -150px;
+    }
+
+    to {
+        opacity: 1;
+        bottom: 50px;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        bottom: 50px;
+    }
+
+    to {
+        opacity: 0;
+        bottom: 150px;
+    }
+}
+
+
+@media screen and (max-width: 760px) {
+    .col-md-6 {
+        justify-content: center!important;
+        margin: 12px;
+    }
+
+    .mycard {
+        width: 18rem!important;
+    }
+
+    .container-fluid {
+        margin: 30px 0 !important;
+    }
+
+    .alert {
+        bottom: 10px;
+        left: 10px;
+        max-width: calc(100vw - 5%)
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            bottom: -150px;
+        }
+
+        to {
+            opacity: 1;
+            bottom: 0;
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            opacity: 1;
+            bottom: 10px;
+        }
+
+        to {
+            opacity: 0;
+            bottom: 110px;
+        }
+    }
+}
